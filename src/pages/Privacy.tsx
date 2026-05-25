@@ -118,7 +118,7 @@ export default function Privacy() {
                     <strong>Company:</strong>NexuxHR<br />
                     <strong>Email:</strong> support@nexuxhr.com<br />
                     <strong>Address:</strong> Birtamode-Jhapa, Nepal<br />
-                    <strong>Phone:</strong> +1 (555) 123-4567
+                    <strong>Phone:</strong> +977 9768625658
                   </p>
                 </div>
               </div>

@@ -75,9 +75,9 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-primary-400/80" />
                 support@nexuxhr.com
               </a>
-              <a href="tel:+15551234567" className="flex items-center gap-2.5 transition-colors hover:text-primary-300">
+              <a href="tel:+977 9768625658" className="flex items-center gap-2.5 transition-colors hover:text-primary-300">
                 <Phone className="h-4 w-4 text-primary-400/80" />
-                +1 (555) 123-4567
+                +977 9768625658
               </a>
               <span className="flex items-center gap-2.5">
                 <MapPin className="h-4 w-4 text-primary-400/80" />
