@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Users, Clock, CalendarDays, DollarSign, UserPlus, BarChart3,
+  Users, Clock, CalendarDays, DollarSign, BarChart3,
   TrendingUp, ArrowRight, CheckCircle2, Shield, Layers,
   Settings, FileText, Bell, PieChart, Target, Award
 } from 'lucide-react';

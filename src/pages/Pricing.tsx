@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, X, ArrowRight, Zap, HelpCircle } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
+import { useWaitlist } from '../components/WaitlistModal';
 
 const plans = [
   {
@@ -82,6 +83,7 @@ const comparisonFeatures = [
 
 export default function Pricing() {
   const [isYearly, setIsYearly] = useState(false);
+  const { openWaitlist } = useWaitlist();
 
   return (
     <div className="overflow-hidden">
@@ -180,15 +182,27 @@ export default function Pricing() {
                     </p>
                   )}
 
-                  <Link
-                    to="/contact"
-                    className={`mt-8 block rounded-2xl py-3.5 text-center text-sm font-semibold transition-all ${plan.popular
-                      ? 'bg-white text-red-700 hover:bg-gray-50 shadow-lg'
-                      : 'gradient-primary text-white shadow-lg shadow-red-500/25 hover:shadow-xl'
-                      }`}
-                  >
-                    {plan.name === 'Enterprise' ? 'Contact Sales' : 'Start Free Trial'}
-                  </Link>
+                  {plan.name === 'Enterprise' ? (
+                    <Link
+                      to="/contact"
+                      className={`mt-8 block rounded-2xl py-3.5 text-center text-sm font-semibold transition-all ${plan.popular
+                        ? 'bg-white text-red-700 hover:bg-gray-50 shadow-lg'
+                        : 'gradient-primary text-white shadow-lg shadow-red-500/25 hover:shadow-xl'
+                        }`}
+                    >
+                      Contact Sales
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={openWaitlist}
+                      className={`mt-8 block w-full rounded-2xl py-3.5 text-center text-sm font-semibold transition-all cursor-pointer ${plan.popular
+                        ? 'bg-white text-red-700 hover:bg-gray-50 shadow-lg'
+                        : 'gradient-primary text-white shadow-lg shadow-red-500/25 hover:shadow-xl'
+                        }`}
+                    >
+                      Start Free Trial
+                    </button>
+                  )}
 
                   <div className={`mt-8 pt-8 border-t flex-1 ${plan.popular ? 'border-white/20' : 'border-gray-100'}`}>
                     <p className={`text-sm font-semibold mb-4 ${plan.popular ? 'text-white' : 'text-gray-900'}`}>

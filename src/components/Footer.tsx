@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
-import { LogoIcon } from './Logo';
+import { useWaitlist } from './WaitlistModal';
 
 const footerLinks = {
   Product: [
@@ -21,6 +21,7 @@ const footerLinks = {
 };
 
 export default function Footer() {
+  const { openWaitlist } = useWaitlist();
   return (
     <footer className="relative bg-primary-950 text-gray-400">
       {/* Top glow line */}
@@ -38,13 +39,13 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              to="/pricing"
-              className="gradient-primary inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-950/40 transition-all hover:-translate-y-0.5"
+            <button
+              onClick={openWaitlist}
+              className="gradient-primary inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary-950/40 transition-all hover:-translate-y-0.5 cursor-pointer"
             >
               Get Early Access
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </button>
             <Link
               to="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-6 py-3 text-sm font-semibold text-gray-300 transition-all hover:-translate-y-0.5 hover:border-white/20 hover:text-white"

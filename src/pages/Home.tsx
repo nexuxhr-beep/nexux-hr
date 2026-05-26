@@ -5,6 +5,7 @@ import {
   BarChart3, Star, CheckCircle2, Shield, Fingerprint
 } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
+import { useWaitlist } from '../components/WaitlistModal';
 
 const features = [
   { icon: Users, title: 'Employee Management', desc: 'Centralize all employee data, documents, and records in one secure platform.' },
@@ -50,6 +51,7 @@ const plans = [
 ];
 
 export default function Home() {
+  const { openWaitlist } = useWaitlist();
   return (
     <div className="overflow-hidden">
       {/* ─── SAAS HERO (2-COLUMN, NO IMAGE) ─── */}
@@ -94,12 +96,12 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.26 }}
               className="mt-10 flex flex-col gap-4 sm:flex-row"
             >
-              <Link
-                to="/pricing"
-                className="gradient-primary inline-flex items-center justify-center rounded-full px-10 py-4 text-base font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-500/30"
+              <button
+                onClick={openWaitlist}
+                className="gradient-primary inline-flex items-center justify-center rounded-full px-10 py-4 text-base font-bold text-white shadow-lg shadow-blue-500/20 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-blue-500/30 cursor-pointer"
               >
                 Join Waitlist
-              </Link>
+              </button>
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center rounded-full border-2 border-gray-100 px-10 py-4 text-base font-bold text-gray-900 transition-all hover:-translate-y-0.5 hover:border-blue-100 hover:bg-blue-50"
@@ -400,13 +402,13 @@ export default function Home() {
               Be among the first to experience NexuxHR when we launch. Join the waitlist and get early access with exclusive pricing.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                to="/pricing"
-                className="inline-flex items-center gap-2 rounded-2xl bg-white px-8 py-4 text-base font-semibold text-blue-700 shadow-xl transition-all hover:bg-gray-50 hover:-translate-y-1 hover:shadow-2xl"
+              <button
+                onClick={openWaitlist}
+                className="inline-flex items-center gap-2 rounded-2xl bg-white px-8 py-4 text-base font-semibold text-blue-700 shadow-xl transition-all hover:bg-gray-50 hover:-translate-y-1 hover:shadow-2xl cursor-pointer"
               >
                 Join Waitlist
                 <ArrowRight className="h-5 w-5" />
-              </Link>
+              </button>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 rounded-2xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:-translate-y-1"

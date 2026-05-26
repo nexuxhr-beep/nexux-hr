@@ -8,9 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@emailjs/browser':
+        specifier: ^4.4.1
+        version: 4.4.1
       clsx:
         specifier: 2.1.1
         version: 2.1.1
+      emailjs:
+        specifier: ^5.0.0
+        version: 5.0.0(typescript@5.9.3)
       framer-motion:
         specifier: ^12.40.0
         version: 12.40.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -142,6 +148,10 @@ packages:
   '@babel/types@7.29.0':
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
+
+  '@emailjs/browser@4.4.1':
+    resolution: {integrity: sha512-DGSlP9sPvyFba3to2A50kDtZ+pXVp/0rhmqs2LmbMS3I5J8FSOgLwzY2Xb4qfKlOVHh29EAutLYwe5yuEZmEFg==}
+    engines: {node: '>=14.0.0'}
 
   '@esbuild/aix-ppc64@0.27.7':
     resolution: {integrity: sha512-EKX3Qwmhz1eMdEJokhALr0YiD0lhQNwDqkPYyPhiSwKrh7/4KRjQc04sZ8db+5DVVnZ1LmbNDI1uAMPEUBnQPg==}
@@ -629,6 +639,15 @@ packages:
   electron-to-chromium@1.5.361:
     resolution: {integrity: sha512-Q6Hts7N9FnJc5LeGRINFvLhCI9xZmNtTDe5ZbcVezQz7cU4a8Aua3GH1b8J2XY8Al9PF+OCwYqhgsOOheMdvkA==}
 
+  emailjs@5.0.0:
+    resolution: {integrity: sha512-J7gxswcLGRZQM+HQBgll0DJuEMFiJIa7UzgK3GsjlytyRS4X2z7K1brQLlezEs3ul+jqvYYoCTqPAgWrVZf0mw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      typescript: '>=5.0.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   enhanced-resolve@5.22.0:
     resolution: {integrity: sha512-xYcDWrpELkFzz9SpZ3PlI6Eu6eD93Yf0WLDRxikGhWJ3MAir2SNZTIVCVZqZ/NUyx8AdMc2gT9C0gPiw18kG+A==}
     engines: {node: '>=10.13.0'}
@@ -1072,6 +1091,8 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
+  '@emailjs/browser@4.4.1': {}
+
   '@esbuild/aix-ppc64@0.27.7':
     optional: true
 
@@ -1392,6 +1413,10 @@ snapshots:
   detect-libc@2.1.2: {}
 
   electron-to-chromium@1.5.361: {}
+
+  emailjs@5.0.0(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
 
   enhanced-resolve@5.22.0:
     dependencies:
