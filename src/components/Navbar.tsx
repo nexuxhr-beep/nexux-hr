@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useWaitlist } from './WaitlistModal';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -16,7 +15,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { openWaitlist } = useWaitlist();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -76,12 +74,12 @@ export default function Navbar() {
             >
               Contact Sales
             </Link>
-            <button
-              onClick={openWaitlist}
+            <a
+              href="https://app.nexuxhr.com"
               className="gradient-primary rounded-xl px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition-all hover:shadow-xl hover:shadow-red-500/30 hover:-translate-y-0.5 cursor-pointer"
             >
               Get Started Free
-            </button>
+            </a>
           </div>
 
           {/* Mobile Toggle */}
@@ -124,12 +122,12 @@ export default function Navbar() {
                 >
                   Contact Sales
                 </Link>
-                <button
-                  onClick={openWaitlist}
+                <a
+                  href="https://app.nexuxhr.com"
                   className="gradient-primary block w-full rounded-xl px-4 py-3 text-center text-sm font-semibold text-white shadow-lg cursor-pointer"
                 >
                   Get Started Free
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
