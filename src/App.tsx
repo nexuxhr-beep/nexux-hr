@@ -10,6 +10,8 @@ import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import Blog from './pages/Blog';
+import BlogDetail from './pages/BlogDetail';
 import { ToastProvider } from './components/Toast';
 import { WaitlistProvider } from './components/WaitlistModal';
 
@@ -31,6 +33,8 @@ export default function App() {
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogDetail />} />
               </Routes>
             </main>
             <Footer />

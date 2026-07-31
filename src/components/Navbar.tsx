@@ -9,6 +9,7 @@ const navLinks = [
   { name: 'Features', path: '/features' },
   { name: 'Pricing', path: '/pricing' },
   { name: 'FAQ', path: '/faq' },
+  { name: 'Blog', path: '/blog' },
 ];
 
 export default function Navbar() {
@@ -49,13 +50,13 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${location.pathname === link.path
+                className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${(location.pathname === link.path || (link.path === '/blog' && location.pathname.startsWith('/blog/')))
                   ? 'text-primary-700'
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/60'
                   }`}
               >
                 {link.name}
-                {location.pathname === link.path && (
+                {(location.pathname === link.path || (link.path === '/blog' && location.pathname.startsWith('/blog/'))) && (
                   <motion.div
                     layoutId="activeNav"
                     className="absolute inset-0 rounded-lg bg-primary-50 border border-primary-100"
@@ -107,7 +108,7 @@ export default function Navbar() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`block rounded-lg px-4 py-3 text-sm font-medium transition-all ${location.pathname === link.path
+                  className={`block rounded-lg px-4 py-3 text-sm font-medium transition-all ${(location.pathname === link.path || (link.path === '/blog' && location.pathname.startsWith('/blog/')))
                     ? 'bg-primary-50 text-primary-700'
                     : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                     }`}
